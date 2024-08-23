@@ -24,12 +24,16 @@ export async function getStaticPaths() {
     return [{ params: {id: "5eb87cd9ffd86e000604b32a"} }]
 }
 
-console.log(launch)
+// console.log(launch)
 ---
 
 
 <Layout title="`Lanzamiento ${id}`">
-    <article>
-        {launch?.id}
+    <article class="flex gap-y-4 flex-col">
+        <img class="w-52 h-auto" src={launch?.links?.patch.small} alt={launch?.name}>
+        <h2 class="text-4xl text-white font-bold">
+            Launch #{launch?.flight_number}
+        </h2>
+        <p class="text-l">{launch?.details}</p>
     </article>    
 </Layout>
